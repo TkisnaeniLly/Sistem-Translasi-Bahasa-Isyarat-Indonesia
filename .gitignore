@@ -1,0 +1,35 @@
+# ===== Python cache =====
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# ===== Virtual Environment =====
+env/
+venv/
+ENV/
+.env/
+.venv/
+
+# ===== Model / Training Artifacts =====
+*.pkl
+*.h5
+*.pt
+*.onnx
+
+# ===== Dataset / Large Files =====
+dataset/
+
+# ===== Jupyter Notebook checkpoints =====
+.ipynb_checkpoints/
+
+# ===== System / Editor cache =====
+.DS_Store
+Thumbs.db
+
+# ===== Logs =====
+*.log
+
+# ===== IDE specific =====
+.vscode/
+.idea/
