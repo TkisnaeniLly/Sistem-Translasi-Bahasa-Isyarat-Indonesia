@@ -1,13 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Najwa</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <title>Landing Page Aesthetic</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
+
 <body>
-    <h1>Halo! Ini halaman HTML-ku</h1>
-    <p>Website ini berjalan melalui Flask (Python).</p>
+
+    <!-- TOP RIGHT MENU -->
+    <div class="top-menu">
+        <a href="#">Akun</a>
+        <a href="#">Tentang Kami</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/translate">Translate</a>
+        <a href="/history">Histori Translate</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Sistem Translasi Bahasa Isyarat</h1>
+        <p>Grub Kartini ✨</p>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="home-section">
+
+        <h2>Cara Menggunakan Sistem Translate</h2>
+        <p>
+            Sistem ini membantu kamu menerjemahkan bahasa isyarat menjadi teks secara otomatis.
+            Kamu hanya perlu menggunakan kamera secara langsung.
+        </p>
+
+        <div class="home-box">
+            <h3>Langkah Penggunaan:</h3>
+            <ul>
+                <li>Buka menu <b>Translate</b></li>
+                <li>hidupkan kamera</li>
+                <li>Tunggu proses translasi</li>
+                <li>Hasil translasi muncul otomatis</li>
+            </ul>
+
+            <a class="btn" href="/translate">Mulai Translate ➜</a>
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Grub Kartini</p>
+    </footer>
+
 </body>
 </html>
