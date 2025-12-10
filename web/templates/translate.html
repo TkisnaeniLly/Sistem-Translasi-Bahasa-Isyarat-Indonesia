@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translate Bahasa Isyarat</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- TOP RIGHT MENU -->
+    <div class="top-menu">
+        <a href="#">Akun</a>
+        <a href="#">Tentang Kami</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/translate" class="active">Translate</a>
+        <a href="/history">Histori Translate</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Sistem Translasi Bahasa Isyarat</h1>
+        <p>Grub Kartini ✨</p>
+    </header>
+
+    <!-- TRANSLATE SECTION -->
+    <section class="home-section">
+        <h2>Translate Bahasa Isyarat dengan Webcam</h2>
+        <p>Aktifkan kamera untuk mulai menerjemahkan bahasa isyarat ke teks.</p>
+
+        <div class="home-box" style="text-align:center;">
+            <!-- WEBCAM -->
+            <video id="webcam" autoplay playsinline></video>
+
+            <!-- OUTPUT TEXT -->
+            <div id="output" style="margin-top:20px; font-weight:bold; font-size:20px;">
+                Hasil: -
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Grub Kartini</p>
+    </footer>
+
+<script>
+    const video = document.getElementById("webcam");
+
+    async function startCamera() {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            video.srcObject = stream;
+        } catch (error) {
+            alert("Kamera tidak bisa diakses!");
+        }
+    }
+
+    startCamera();
+</script>
+
+</body>
+</html>
