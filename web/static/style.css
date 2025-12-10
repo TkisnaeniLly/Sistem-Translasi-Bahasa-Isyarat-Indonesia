@@ -1,10 +1,122 @@
+/* GLOBAL */
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    text-align: center;
-    padding-top: 50px;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #fdfafe;
+    color: #333;
 }
 
-h1 {
-    color: #444;
+/* TOP RIGHT MENU */
+.top-menu {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.top-menu a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #ff7eb9;
+    font-weight: 600;
+}
+
+.top-menu a:hover {
+    color: #6EB6FF;
+}
+
+/* MAIN NAVBAR */
+.main-nav {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.main-nav a {
+    margin: 0 25px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #ff7eb3;
+}
+
+.main-nav a:hover {
+    color: #6EB6FF;
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #ffb6d5, #a5d8ff);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    opacity: 0.9;
+}
+
+/* HOME SECTION */
+.home-section {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.home-section h2 {
+    color: #ff8fcf;
+    font-size: 28px;
+}
+
+.home-section p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* HOME BOX */
+.home-box {
+    background: white;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.home-box ul {
+    line-height: 1.8;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ff9ccc;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #7ec8ff;
+    transition: 0.3s;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #a5d8ff;
+    color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
 }
