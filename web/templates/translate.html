@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
-<body>
+<body class="fade-in">
 
     <!-- TOP RIGHT MENU -->
     <div class="top-menu">
@@ -24,7 +24,7 @@
     </nav>
 
     <!-- HEADER -->
-    <header>
+    <header class="floating">
         <h1>Sistem Translasi Bahasa Isyarat</h1>
         <p>Grub Kartini ✨</p>
     </header>
@@ -34,28 +34,38 @@
         <h2>Translate Bahasa Isyarat dengan Webcam</h2>
         <p>Aktifkan kamera untuk mulai menerjemahkan bahasa isyarat ke teks.</p>
 
-        <div class="home-box" style="text-align:center;">
+        <div class="home-box fade-in" style="text-align:center;">
+
+            <!-- LOADING ANIMASI -->
+            <div id="loading" class="loader"></div>
+
             <!-- WEBCAM -->
-            <video id="webcam" autoplay playsinline></video>
+            <video id="webcam" autoplay playsinline class="glow-video" style="display:none;"></video>
 
             <!-- OUTPUT TEXT -->
-            <div id="output" style="margin-top:20px; font-weight:bold; font-size:20px;">
-                Hasil: -
-            </div>
+            <div id="output" class="typing-text">Hasil: -</div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer>
+    <footer class="floating">
         <p>Grub Kartini</p>
     </footer>
 
 <script>
     const video = document.getElementById("webcam");
+    const loading = document.getElementById("loading");
 
     async function startCamera() {
         try {
             const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+
+            // ketika kamera siap → hide loading, show video
+            setTimeout(() => {
+                loading.style.display = "none";
+                video.style.display = "block";
+            }, 1500);
+
             video.srcObject = stream;
         } catch (error) {
             alert("Kamera tidak bisa diakses!");
