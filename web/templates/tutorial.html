@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Penggunaan</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- TOP MENU -->
+    <div class="top-menu">
+        <a href="#">Akun</a>
+        <a href="#">Tentang Kami</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="main-nav">
+        <a href="/">Home</a>
+        <a href="/translate">Translate</a>
+        <a href="/tutorial" class="active">Tutorial</a>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <h1>Tutorial Penggunaan Sistem</h1>
+        <p>Panduan lengkap cara menggunakan aplikasi translasi bahasa isyarat</p>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="tutorial-wrapper">
+
+        <h2 class="title">📖 Tutorial Penggunaan</h2>
+        <p class="subtitle">Ikuti langkah-langkah berikut dengan mudah ✨</p>
+
+        <!-- CARD 1 -->
+        <div class="tutorial-card fade-step">
+            <div class="icon">📌</div>
+            <h3>1. Buka Menu Translate</h3>
+            <p>Pilih menu <b>Translate</b> untuk mulai proses penerjemahan.</p>
+        </div>
+
+        <!-- CARD 2 -->
+        <div class="tutorial-card fade-step">
+            <div class="icon">📷</div>
+            <h3>2. Izinkan Akses Kamera</h3>
+            <p>Klik <b>Izinkan</b> agar kamera dapat digunakan.</p>
+        </div>
+
+        <!-- CARD 3 -->
+        <div class="tutorial-card fade-step">
+            <div class="icon">🤟</div>
+            <h3>3. Arahkan Tangan ke Kamera</h3>
+            <p>Pastikan posisi tangan terlihat jelas dan berada di tengah layar.</p>
+        </div>
+
+        <!-- CARD 4 -->
+        <div class="tutorial-card fade-step">
+            <div class="icon">✨</div>
+            <h3>4. Tunggu Hasil Translasi</h3>
+            <p>Sistem akan menampilkan hasil translasi secara otomatis.</p>
+        </div>
+
+        <!-- CARD 5 -->
+        <div class="tutorial-card fade-step">
+            <div class="icon">📝</div>
+            <h3>5. Lihat Riwayat Translasi</h3>
+            <p>Kunjungi menu <b>Histori</b> untuk melihat hasil sebelumnya.</p>
+        </div>
+
+        <a href="/translate" class="btn tutorial-btn">Mulai Translate ➜</a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Grup Kartini ✨</p>
+    </footer>
+
+    <!-- SCRIPT ANIMASI (DIPINDAH KE BAWAH) -->
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll('.fade-step');
+
+            const showCards = () => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        card.classList.add('show');
+                    }
+                });
+            };
+
+            showCards();
+            window.addEventListener('scroll', showCards);
+        });
+    </script>
+
+</body>
+</html>
