@@ -3,7 +3,7 @@ import numpy as np, cv2, mediapipe as mp, joblib, tensorflow as tf
 
 IMG_SIZE   = 128
 SENSOR_LEN = 8                     # <-- sesuaikan dengan rf_model
-CLASS      = ['A','B','C','D','E','F','G','H','I','J']   # contoh
+CLASS      = ['A','B','C','D','E','F','G','H','I','J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']    # contoh
 
 # ---------- 1. load Random-Forest untuk “sensor fake” ----------
 rf = joblib.load('rf_model.pkl')
