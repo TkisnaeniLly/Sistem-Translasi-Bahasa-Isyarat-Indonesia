@@ -1,0 +1,277 @@
+/* ===========================
+   GLOBAL STYLE
+=========================== */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: #fdfafe;
+    color: #333;
+}
+
+/* Fade-in animation */
+.fade-in {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating animation */
+.floating {
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(6px); }
+}
+
+/* ===========================
+   TOP RIGHT MENU
+=========================== */
+.top-menu {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+}
+
+.top-menu a {
+    margin-left: 15px;
+    text-decoration: none;
+    color: #ff7eb9;
+    font-weight: 600;
+}
+
+.top-menu a:hover {
+    color: #6EB6FF;
+}
+
+/* ===========================
+   NAVBAR
+=========================== */
+.main-nav {
+    background: white;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+/* Warna default NAVBAR = pink */
+.main-nav a {
+    margin: 0 25px;
+    text-decoration: none;
+    font-weight: 600;
+    color: #ff7eb3; /* PINK */
+}
+
+/* Hover = biru */
+.main-nav a:hover {
+    color: #6EB6FF;
+}
+
+/* Active = biru */
+.main-nav a.active {
+    color: #6EB6FF !important;
+}
+
+/* ===========================
+   HEADER
+=========================== */
+header {
+    background: linear-gradient(135deg, #ffb6d5, #a5d8ff);
+    padding: 60px 20px;
+    text-align: center;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 42px;
+}
+
+header p {
+    opacity: 0.9;
+}
+
+/* ===========================
+   HOME / CONTENT
+=========================== */
+.home-section {
+    width: 80%;
+    margin: 40px auto;
+}
+
+.home-section h2 {
+    color: #ff8fcf;
+    font-size: 28px;
+}
+
+.home-section p {
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* ===========================
+   HOME BOX
+=========================== */
+.home-box {
+    background: white;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+}
+
+.home-box ul {
+    line-height: 1.8;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 25px;
+    background: #ff9ccc;
+    color: white;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.btn:hover {
+    background: #7ec8ff;
+    transition: 0.3s;
+}
+
+/* ===========================
+   WEBCAM VIDEO GLOW
+=========================== */
+.glow-video {
+    width: 60%;
+    max-width: 450px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #ff9ccc, 0 0 40px #a5d8ff;
+    animation: glow 3s infinite alternate;
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 15px #ffb6d5; }
+    100% { box-shadow: 0 0 30px #a5d8ff; }
+}
+
+/* ===========================
+   LOADING SPINNER
+=========================== */
+.loader {
+    margin: 20px auto;
+    border: 6px solid #ffe0f4;
+    border-top: 6px solid #7ec8ff;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+/* ===========================
+   TYPING TEXT EFFECT
+=========================== */
+.typing-text {
+    font-size: 20px;
+    font-weight: bold;
+    border-right: 3px solid #ff7eb9;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 2s steps(20), blink .7s infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink {
+    50% { border-color: transparent; }
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+    background: #a5d8ff;
+    color: white;
+    border-top-left-radius: 40px;
+    border-top-right-radius: 40px;
+}
+
+/* ===========================
+   TUTORIAL PAGE
+=========================== */
+.tutorial-wrapper {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.tutorial-wrapper .title {
+    font-size: 30px;
+    color: #ff8fcf;
+}
+
+.tutorial-wrapper .subtitle {
+    margin-top: -10px;
+    font-size: 16px;
+    color: #777;
+}
+
+.tutorial-card {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 25px;
+    width: 85%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: left;
+    border-left: 8px solid #ffb6d5;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.7s ease;
+}
+
+.tutorial-card .icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.tutorial-card h3 {
+    margin: 0;
+    color: #ff7eb9;
+}
+
+.fade-step.show {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.tutorial-btn {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ff9ccc, #7ec8ff);
+    font-size: 18px;
+    color: white;
+}
