@@ -1,79 +1,79 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Translate Bahasa Isyarat</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Translate Bahasa Isyarat</title>
 
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body class="fade-in">
+  <!-- TOP RIGHT MENU -->
+  <div class="top-menu">
+    <a href="#">Akun</a>
+    <a href="#">Tentang Kami</a>
+  </div>
 
-    <!-- TOP RIGHT MENU -->
-    <div class="top-menu">
-        <a href="#">Akun</a>
-        <a href="#">Tentang Kami</a>
+  <!-- NAVBAR -->
+  <nav class="main-nav">
+    <a href="/">Home</a>
+    <a href="/translate">Translate</a>
+    <a href="/tutorial" class="active">Tutorial</a>
+</nav>
+
+
+  <!-- HEADER -->
+  <header class="floating">
+    <h1>Sistem Translasi Bahasa Isyarat</h1>
+    <p>Grub Kartini ✨</p>
+  </header>
+
+  <!-- TRANSLATE SECTION -->
+  <section class="home-section">
+    <h2>Aktifkan kamera untuk mulai menerjemahkan bahasa isyarat ke teks</h2>
+    <p>pastikan area tangan masuk kedalam area kamera.</p>
+
+    <div class="home-box fade-in" style="text-align: center;">
+      <!-- LOADING ANIMASI -->
+      <div id="loading" class="loader"></div>
+
+      <!-- WEBCAM -->
+      <video id="webcam" autoplay playsinline class="glow-video" style="display: none;"></video>
+
+      <!-- OUTPUT TEXT -->
+      <div id="output" class="typing-text">Hasil: -</div>
     </div>
+  </section>
 
-    <!-- NAVBAR -->
-    <nav class="main-nav">
-        <a href="/">Home</a>
-        <a href="/translate" class="active">Translate</a>
-        <a href="/history">Histori Translate</a>
-    </nav>
+  <!-- FOOTER -->
+  <footer class="floating">
+    <p>Grub Kartini</p>
+  </footer>
 
-    <!-- HEADER -->
-    <header class="floating">
-        <h1>Sistem Translasi Bahasa Isyarat</h1>
-        <p>Grub Kartini ✨</p>
-    </header>
-
-    <!-- TRANSLATE SECTION -->
-    <section class="home-section">
-        <h2>Translate Bahasa Isyarat dengan Webcam</h2>
-        <p>Aktifkan kamera untuk mulai menerjemahkan bahasa isyarat ke teks.</p>
-
-        <div class="home-box fade-in" style="text-align:center;">
-
-            <!-- LOADING ANIMASI -->
-            <div id="loading" class="loader"></div>
-
-            <!-- WEBCAM -->
-            <video id="webcam" autoplay playsinline class="glow-video" style="display:none;"></video>
-
-            <!-- OUTPUT TEXT -->
-            <div id="output" class="typing-text">Hasil: -</div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer class="floating">
-        <p>Grub Kartini</p>
-    </footer>
-
-<script>
-    const video = document.getElementById("webcam");
-    const loading = document.getElementById("loading");
-
+  <!-- SCRIPT: letakkan sebelum penutup body dan pastikan tag ditutup -->
+  <script>
     async function startCamera() {
-        try {
-            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+      try {
+        const video = document.getElementById("webcam");
+        const loading = document.getElementById("loading");
+        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
 
-            // ketika kamera siap → hide loading, show video
-            setTimeout(() => {
-                loading.style.display = "none";
-                video.style.display = "block";
-            }, 1500);
+        // ketika kamera siap → hide loading, show video
+        setTimeout(() => {
+          loading.style.display = "none";
+          video.style.display = "block";
+        }, 1500);
 
-            video.srcObject = stream;
-        } catch (error) {
-            alert("Kamera tidak bisa diakses!");
-        }
+        video.srcObject = stream;
+        video.style.transform = "scaleX(-1)";
+      } catch (error) {
+        alert("Kamera tidak bisa diakses!");
+      }
     }
 
+    // panggil setelah definisi fungsi
     startCamera();
-</script>
-
+  </script>
 </body>
 </html>
