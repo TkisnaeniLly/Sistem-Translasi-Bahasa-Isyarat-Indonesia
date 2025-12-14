@@ -1,61 +1,57 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page Aesthetic</title>
-
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>coba coba</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 
 <body>
 
-    <!-- TOP RIGHT MENU -->
-    <div class="top-menu">
-        <a href="#">Akun</a>
-        <a href="#">Tentang Kami</a>
+  <!-- TOP RIGHT MENU -->
+  <div class="top-menu">
+    <a href="#">Akun</a>
+    <a href="#">Tentang Kami</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="main-nav">
+    <a href="/">Home</a>
+    <a href="/translate">Translate</a>
+    <a href="/tutorial" class="active">Tutorial</a>
+</nav>
+
+
+  <!-- HEADER -->
+  <header>
+    <h1>Sistem Translasi Bahasa Isyarat</h1>
+    <p>Grub Kartini ✨</p>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section id="home" class="home-section">
+    <h2>Cara Menggunakan Sistem Translate</h2>
+    <p>
+      Sistem ini membantu kamu menerjemahkan bahasa isyarat menjadi teks secara otomatis.
+      Kamu hanya perlu menggunakan kamera secara langsung.
+    </p>
+
+    <div class="home-box">
+      <h3>Langkah Penggunaan:</h3>
+      <ul>
+        <li>Buka menu <b>Translate</b></li>
+        <li>Hidupkan kamera</li>
+        <li>Tunggu proses translasi</li>
+        <li>Hasil translasi muncul otomatis</li>
+      </ul>
     </div>
+  </section>
 
-    <!-- NAVBAR -->
-    <nav class="main-nav">
-        <a href="/">Home</a>
-        <a href="/translate">Translate</a>
-        <a href="/history">Histori Translate</a>
-    </nav>
+  <!-- FOOTER -->
+  <footer>
+    <p>Gunakan Website Kami Dengan Bijak!</p>
+  </footer>
 
-    <!-- HEADER -->
-    <header>
-        <h1>Sistem Translasi Bahasa Isyarat</h1>
-        <p>Grub Kartini ✨</p>
-    </header>
-
-    <!-- HOME SECTION -->
-    <section id="home" class="home-section">
-
-        <h2>Cara Menggunakan Sistem Translate</h2>
-        <p>
-            Sistem ini membantu kamu menerjemahkan bahasa isyarat menjadi teks secara otomatis.
-            Kamu hanya perlu menggunakan kamera secara langsung.
-        </p>
-
-        <div class="home-box">
-            <h3>Langkah Penggunaan:</h3>
-            <ul>
-                <li>Buka menu <b>Translate</b></li>
-                <li>hidupkan kamera</li>
-                <li>Tunggu proses translasi</li>
-                <li>Hasil translasi muncul otomatis</li>
-            </ul>
-
-            <a class="btn" href="/translate">Mulai Translate ➜</a>
-        </div>
-
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        <p>Grub Kartini</p>
-    </footer>
-
-</body>
-</html>
+  <script type="module" src="https://unpkg.com/@splinetool/viewer@1.12.9/build/spline-viewer.js"></script>
+  <spline-viewer url="https://
