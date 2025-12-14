@@ -8,6 +8,10 @@ def home():
 @app.route('/translate')
 def translate():
     return render_template('translate.html')
+@app.route('/tutorial')
+def tutorial():
+    return render_template('tutorial.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

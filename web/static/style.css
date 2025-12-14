@@ -61,16 +61,22 @@ body {
     z-index: 10;
 }
 
+/* Warna default NAVBAR = pink */
 .main-nav a {
     margin: 0 25px;
     text-decoration: none;
     font-weight: 600;
-    color: #ff7eb3;
+    color: #ff7eb3; /* PINK */
 }
 
-.main-nav a:hover,
-.main-nav .active {
+/* Hover = biru */
+.main-nav a:hover {
     color: #6EB6FF;
+}
+
+/* Active = biru */
+.main-nav a.active {
+    color: #6EB6FF !important;
 }
 
 /* ===========================
@@ -95,7 +101,7 @@ header p {
 }
 
 /* ===========================
-   HOME / CONTENT SECTION
+   HOME / CONTENT
 =========================== */
 .home-section {
     width: 80%;
@@ -209,4 +215,63 @@ footer {
     color: white;
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
+}
+
+/* ===========================
+   TUTORIAL PAGE
+=========================== */
+.tutorial-wrapper {
+    width: 80%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+.tutorial-wrapper .title {
+    font-size: 30px;
+    color: #ff8fcf;
+}
+
+.tutorial-wrapper .subtitle {
+    margin-top: -10px;
+    font-size: 16px;
+    color: #777;
+}
+
+.tutorial-card {
+    background: white;
+    padding: 25px;
+    margin: 20px auto;
+    border-radius: 25px;
+    width: 85%;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    text-align: left;
+    border-left: 8px solid #ffb6d5;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.7s ease;
+}
+
+.tutorial-card .icon {
+    font-size: 35px;
+    margin-bottom: 10px;
+}
+
+.tutorial-card h3 {
+    margin: 0;
+    color: #ff7eb9;
+}
+
+.fade-step.show {
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.tutorial-btn {
+    margin-top: 30px;
+    display: inline-block;
+    padding: 14px 35px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ff9ccc, #7ec8ff);
+    font-size: 18px;
+    color: white;
 }
