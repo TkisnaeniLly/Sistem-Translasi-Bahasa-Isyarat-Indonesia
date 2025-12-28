@@ -1,0 +1,14 @@
+numpy==1.26.4
+opencv-python==4.9.0.80
+opencv-contrib-python==4.9.0.80
+matplotlib==3.8.4
+seaborn==0.13.2
+scikit-learn==1.4.2
+tensorflow==2.15.0
+keras==2.15.0
+pillow==10.3.0
+imutils==0.5.4
+mediapipe==0.10.11
+pyspellchecker==0.8.1
+pytz==2024.1
+tqdm==4.66.4
