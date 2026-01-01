@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorial Penggunaan</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- TOP MENU -->
+    <div class="top-menu">
+        <a href="#">Akun</a>
+        <a href="#">Tentang Kami</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="main-nav">
+    <a href="/">Home</a>
+
+    <div class="nav-dropdown">
+        <a href="#">Translate</a>
+        <div class="dropdown-content">
+            <a href="/translate/realtime">Real-Time</a>
+            <a href="/translate/upload">Upload Gambar</a>
+        </div>
+    </div>
+
+    <a href="/tutorial" class="active">Tutorial</a>
+</nav>
+
+
+    <!-- HEADER -->
+    <header>
+        <h1>Tutorial Penggunaan Sistem</h1>
+        <p>Panduan lengkap cara menggunakan aplikasi translasi bahasa isyarat</p>
+    </header>
+
+    <!-- CONTENT -->
+    <section class="tutorial-wrapper">
+
+    <h2 class="title">📖 Tutorial Penggunaan</h2>
+    <p class="subtitle">Pilih metode translasi sesuai kebutuhan ✨</p>
+
+    <!-- ================= REAL-TIME ================= -->
+    <h3 style="margin-top:40px;">🎥 Tutorial Translate Real-Time</h3>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">📌</div>
+        <h3>1. Pilih Translate → Real-Time</h3>
+        <p>Buka menu <b>Translate</b> lalu pilih <b>Real-Time</b>.</p>
+    </div>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">📷</div>
+        <h3>2. Izinkan Akses Kamera</h3>
+        <p>Klik <b>Izinkan</b> agar kamera dapat digunakan.</p>
+    </div>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">🤟</div>
+        <h3>3. Arahkan Tangan ke Kamera</h3>
+        <p>Pastikan tangan berada di tengah layar dan terlihat jelas.</p>
+    </div>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">✨</div>
+        <h3>4. Lihat Hasil Translasi</h3>
+        <p>Sistem akan menampilkan huruf atau kata secara otomatis.</p>
+    </div>
+
+    <a href="/translate/realtime" class="btn tutorial-btn">Coba Real-Time ➜</a>
+
+    <!-- ================= UPLOAD ================= -->
+    <h3 style="margin-top:60px;">🖼️ Tutorial Translate Upload Gambar</h3>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">📁</div>
+        <h3>1. Pilih Translate → Upload Gambar</h3>
+        <p>Buka menu <b>Translate</b> lalu pilih <b>Upload Gambar</b>.</p>
+    </div>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">⬆️</div>
+        <h3>2. Upload Gambar Bahasa Isyarat</h3>
+        <p>Pilih gambar dengan posisi tangan yang jelas.</p>
+    </div>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">🔍</div>
+        <h3>3. Proses Deteksi</h3>
+        <p>Sistem akan menganalisis gambar yang diunggah.</p>
+    </div>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">📊</div>
+        <h3>4. Lihat Hasil & Persentase</h3>
+        <p>Hasil huruf dan tingkat akurasi akan ditampilkan.</p>
+    </div>
+
+    <a href="/translate/upload" class="btn tutorial-btn">Coba Upload Gambar ➜</a>
+
+</section>
+
+
+    <!-- FOOTER -->
+    <footer>
+        <p>Grup Kartini ✨</p>
+    </footer>
+
+    <!-- SCRIPT ANIMASI (DIPINDAH KE BAWAH) -->
+    <script>
+        window.addEventListener("DOMContentLoaded", () => {
+            const cards = document.querySelectorAll('.fade-step');
+
+            const showCards = () => {
+                cards.forEach(card => {
+                    const rect = card.getBoundingClientRect();
+                    if (rect.top < window.innerHeight - 100) {
+                        card.classList.add('show');
+                    }
+                });
+            };
+
+            showCards();
+            window.addEventListener('scroll', showCards);
+        });
+    </script>
+
+</body>
+</html>

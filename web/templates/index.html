@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page Aesthetic</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- TOP RIGHT MENU -->
+    <div class="top-menu">
+        <a href="#">Akun</a>
+        <a href="#">Tentang Kami</a>
+    </div>
+
+    <!-- NAVBAR -->
+<nav class="main-nav">
+    <a href="/">Home</a>
+
+    <!-- TRANSLATE MENU -->
+    <div class="nav-dropdown">
+        <a href="#">Translate</a>
+        <div class="dropdown-content">
+            <a href="/translate/realtime">Real-Time</a>
+            <a href="/translate/upload">Upload Gambar</a>
+        </div>
+    </div>
+
+    <a href="/tutorial">Tutorial</a>
+</nav>
+
+
+    <!-- HEADER -->
+    <header>
+        <h1>Sistem Translasi Bahasa Isyarat</h1>
+        <p>Grub Kartini ✨</p>
+    </header>
+
+    <!-- HOME SECTION -->
+    <section id="home" class="home-section">
+
+    <h2>Tentang Sistem Translasi</h2>
+    <p>
+        Website ini dibuat untuk membantu proses komunikasi antara pengguna bahasa
+        isyarat dan masyarakat umum secara lebih mudah dan inklusif.
+    </p>
+
+    <div class="info-wrapper">
+
+        <!-- BOX 1 -->
+        <div class="info-box">
+            <h3>💡 Kenapa Sistem Ini Dibuat?</h3>
+            <p>
+                Sistem translasi bahasa isyarat ini dibuat untuk membantu penyandang
+                tunarungu dalam berkomunikasi dengan lebih mudah, cepat, dan mandiri.
+                Dengan bantuan teknologi kamera dan pemrosesan visual, sistem ini
+                mampu menerjemahkan gerakan bahasa isyarat menjadi teks secara real-time.
+            </p>
+        </div>
+
+        <!-- BOX 2 -->
+        <div class="info-box">
+            <h3>🤟 Apa Itu Bahasa Isyarat?</h3>
+            <p>
+                Bahasa isyarat adalah sistem komunikasi visual yang menggunakan
+                gerakan tangan, ekspresi wajah, dan bahasa tubuh. Bahasa ini digunakan
+                oleh komunitas tunarungu sebagai alat komunikasi utama dan memiliki
+                struktur serta aturan tersendiri seperti bahasa lisan.
+            </p>
+        </div>
+
+    </div>
+
+    <a class="btn" href="/translate/realtime">Mulai Translate ➜</a>
+
+</section>
+
+</body>
+</html>
