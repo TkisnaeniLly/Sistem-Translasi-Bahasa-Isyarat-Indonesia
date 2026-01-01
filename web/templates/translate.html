@@ -1,79 +1,120 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Translate Bahasa Isyarat</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translate Bahasa Isyarat</title>
 
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
-</head>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
 
-<body class="fade-in">
-  <!-- TOP RIGHT MENU -->
-  <div class="top-menu">
-    <a href="#">Akun</a>
-    <a href="#">Tentang Kami</a>
+  <body class="fade-in">
+    <!-- TOP RIGHT MENU -->
+    <div class="top-menu">
+      <a href="#">Akun</a>
+      <a href="#">Tentang Kami</a>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="main-nav">
+  <a href="/">Home</a>
+
+  <div class="nav-dropdown">
+    <a href="#" class="active">Translate</a>
+    <div class="dropdown-content">
+      <a href="/translate/realtime">Real-Time</a>
+      <a href="/translate/upload">Upload Gambar</a>
+    </div>
   </div>
 
-  <!-- NAVBAR -->
-  <nav class="main-nav">
-    <a href="/">Home</a>
-    <a href="/translate">Translate</a>
-    <a href="/tutorial" class="active">Tutorial</a>
+  <a href="/tutorial">Tutorial</a>
 </nav>
 
 
-  <!-- HEADER -->
-  <header class="floating">
-    <h1>Sistem Translasi Bahasa Isyarat</h1>
-    <p>Grub Kartini ✨</p>
-  </header>
+    <!-- HEADER -->
+    <header class="floating">
+      <h1>Sistem Translasi Bahasa Isyarat</h1>
+      <p>Grub Kartini ✨</p>
+    </header>
 
-  <!-- TRANSLATE SECTION -->
-  <section class="home-section">
-    <h2>Aktifkan kamera untuk mulai menerjemahkan bahasa isyarat ke teks</h2>
-    <p>pastikan area tangan masuk kedalam area kamera.</p>
+    <!-- TRANSLATE SECTION -->
+    <section class="translate-section">
+  <h2 class="section-title">Sistem Translasi Bahasa Isyarat</h2>
+  <p class="section-desc">
+    Pastikan area tangan masuk ke dalam area webcam.
+  </p>
 
-    <div class="home-box fade-in" style="text-align: center;">
-      <!-- LOADING ANIMASI -->
-      <div id="loading" class="loader"></div>
+  <div class="translate-container">
 
-      <!-- WEBCAM -->
-      <video id="webcam" autoplay playsinline class="glow-video" style="display: none;"></video>
+  <!-- KIRI: CAMERA -->
+  <div class="camera-box">
+  <video id="video" autoplay muted playsinline></video>
+  <div id="loading" class="loader"></div>
+</div>
 
-      <!-- OUTPUT TEXT -->
-      <div id="output" class="typing-text">Hasil: -</div>
+
+  <!-- KANAN: OUTPUT -->
+  <div class="output-box">
+    <div class="output-card">
+      <h4>Identifikasi Huruf</h4>
+      <div class="output-field">-</div>
     </div>
-  </section>
 
-  <!-- FOOTER -->
-  <footer class="floating">
-    <p>Grub Kartini</p>
-  </footer>
+    <div class="output-card">
+      <h4>Output Kata</h4>
+      <div class="output-field">-</div>
+    </div>
+  </div>
 
-  <!-- SCRIPT: letakkan sebelum penutup body dan pastikan tag ditutup -->
-  <script>
-    async function startCamera() {
-      try {
-        const video = document.getElementById("webcam");
-        const loading = document.getElementById("loading");
-        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+</div>
 
-        // ketika kamera siap → hide loading, show video
-        setTimeout(() => {
-          loading.style.display = "none";
-          video.style.display = "block";
-        }, 1500);
 
-        video.srcObject = stream;
-        video.style.transform = "scaleX(-1)";
-      } catch (error) {
-        alert("Kamera tidak bisa diakses!");
-      }
+  <!-- BUTTON -->
+  <button id="toggleCam" class="btn-start">Start</button>
+</section>
+
+
+    <!-- FOOTER -->
+   <script>
+const video = document.getElementById("video");
+const loading = document.getElementById("loading");
+const toggleBtn = document.getElementById("toggleCam");
+
+let stream = null;
+let isCameraOn = false;
+
+toggleBtn.addEventListener("click", async () => {
+  if (!isCameraOn) {
+    try {
+      loading.style.display = "block";
+
+      stream = await navigator.mediaDevices.getUserMedia({
+        video: { facingMode: "user" },
+      });
+
+      video.srcObject = stream;
+      video.style.display = "block";
+      loading.style.display = "none";
+
+      toggleBtn.textContent = "Stop";
+      isCameraOn = true;
+    } catch (err) {
+      alert("Kamera tidak bisa diakses!");
     }
+  } else {
+    stream.getTracks().forEach(track => track.stop());
+    video.style.display = "none";
+    toggleBtn.textContent = "Start";
+    isCameraOn = false;
+  }
+});
+</script>
 
-    // panggil setelah definisi fungsi
-    startCamera();
-  </script>
-</body>
+<footer>
+  Gunakan Website kami dengan bijak!
+</footer>
+  </body>
 </html>
