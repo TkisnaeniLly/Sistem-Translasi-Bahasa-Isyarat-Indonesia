@@ -18,10 +18,19 @@
 
     <!-- NAVBAR -->
     <nav class="main-nav">
-        <a href="/">Home</a>
-        <a href="/translate">Translate</a>
-        <a href="/tutorial" class="active">Tutorial</a>
-    </nav>
+    <a href="/">Home</a>
+
+    <div class="nav-dropdown">
+        <a href="#">Translate</a>
+        <div class="dropdown-content">
+            <a href="/translate/realtime">Real-Time</a>
+            <a href="/translate/upload">Upload Gambar</a>
+        </div>
+    </div>
+
+    <a href="/tutorial" class="active">Tutorial</a>
+</nav>
+
 
     <!-- HEADER -->
     <header>
@@ -32,47 +41,69 @@
     <!-- CONTENT -->
     <section class="tutorial-wrapper">
 
-        <h2 class="title">📖 Tutorial Penggunaan</h2>
-        <p class="subtitle">Ikuti langkah-langkah berikut dengan mudah ✨</p>
+    <h2 class="title">📖 Tutorial Penggunaan</h2>
+    <p class="subtitle">Pilih metode translasi sesuai kebutuhan ✨</p>
 
-        <!-- CARD 1 -->
-        <div class="tutorial-card fade-step">
-            <div class="icon">📌</div>
-            <h3>1. Buka Menu Translate</h3>
-            <p>Pilih menu <b>Translate</b> untuk mulai proses penerjemahan.</p>
-        </div>
+    <!-- ================= REAL-TIME ================= -->
+    <h3 style="margin-top:40px;">🎥 Tutorial Translate Real-Time</h3>
 
-        <!-- CARD 2 -->
-        <div class="tutorial-card fade-step">
-            <div class="icon">📷</div>
-            <h3>2. Izinkan Akses Kamera</h3>
-            <p>Klik <b>Izinkan</b> agar kamera dapat digunakan.</p>
-        </div>
+    <div class="tutorial-card fade-step">
+        <div class="icon">📌</div>
+        <h3>1. Pilih Translate → Real-Time</h3>
+        <p>Buka menu <b>Translate</b> lalu pilih <b>Real-Time</b>.</p>
+    </div>
 
-        <!-- CARD 3 -->
-        <div class="tutorial-card fade-step">
-            <div class="icon">🤟</div>
-            <h3>3. Arahkan Tangan ke Kamera</h3>
-            <p>Pastikan posisi tangan terlihat jelas dan berada di tengah layar.</p>
-        </div>
+    <div class="tutorial-card fade-step">
+        <div class="icon">📷</div>
+        <h3>2. Izinkan Akses Kamera</h3>
+        <p>Klik <b>Izinkan</b> agar kamera dapat digunakan.</p>
+    </div>
 
-        <!-- CARD 4 -->
-        <div class="tutorial-card fade-step">
-            <div class="icon">✨</div>
-            <h3>4. Tunggu Hasil Translasi</h3>
-            <p>Sistem akan menampilkan hasil translasi secara otomatis.</p>
-        </div>
+    <div class="tutorial-card fade-step">
+        <div class="icon">🤟</div>
+        <h3>3. Arahkan Tangan ke Kamera</h3>
+        <p>Pastikan tangan berada di tengah layar dan terlihat jelas.</p>
+    </div>
 
-        <!-- CARD 5 -->
-        <div class="tutorial-card fade-step">
-            <div class="icon">📝</div>
-            <h3>5. Lihat Riwayat Translasi</h3>
-            <p>Kunjungi menu <b>Histori</b> untuk melihat hasil sebelumnya.</p>
-        </div>
+    <div class="tutorial-card fade-step">
+        <div class="icon">✨</div>
+        <h3>4. Lihat Hasil Translasi</h3>
+        <p>Sistem akan menampilkan huruf atau kata secara otomatis.</p>
+    </div>
 
-        <a href="/translate" class="btn tutorial-btn">Mulai Translate ➜</a>
+    <a href="/translate/realtime" class="btn tutorial-btn">Coba Real-Time ➜</a>
 
-    </section>
+    <!-- ================= UPLOAD ================= -->
+    <h3 style="margin-top:60px;">🖼️ Tutorial Translate Upload Gambar</h3>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">📁</div>
+        <h3>1. Pilih Translate → Upload Gambar</h3>
+        <p>Buka menu <b>Translate</b> lalu pilih <b>Upload Gambar</b>.</p>
+    </div>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">⬆️</div>
+        <h3>2. Upload Gambar Bahasa Isyarat</h3>
+        <p>Pilih gambar dengan posisi tangan yang jelas.</p>
+    </div>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">🔍</div>
+        <h3>3. Proses Deteksi</h3>
+        <p>Sistem akan menganalisis gambar yang diunggah.</p>
+    </div>
+
+    <div class="tutorial-card fade-step">
+        <div class="icon">📊</div>
+        <h3>4. Lihat Hasil & Persentase</h3>
+        <p>Hasil huruf dan tingkat akurasi akan ditampilkan.</p>
+    </div>
+
+    <a href="/translate/upload" class="btn tutorial-btn">Coba Upload Gambar ➜</a>
+
+</section>
+
 
     <!-- FOOTER -->
     <footer>
